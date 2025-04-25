@@ -1,19 +1,12 @@
 task.wait(5)
-local args = {
-    [1] = "ArcadeInstance"
-}
 
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_PlayerEnterInstance"):InvokeServer(unpack(args))
+local RS = game:GetService("ReplicatedStorage")
+local Network = RS:WaitForChild("Network")
+
+Network:WaitForChild("Instancing_PlayerEnterInstance"):InvokeServer("ArcadeInstance")
+
 while true do
-local args = {
-    [1] = "ArcadeInstance",
-    [2] = "Arcade_OnClick"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer(unpack(args))
-local args = {
-    [1] = 50
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Arcade_RequestRebirth"):InvokeServer(unpack(args))
+    Network:WaitForChild("Instancing_FireCustomFromClient"):FireServer("ArcadeInstance", "Arcade_OnClick")
+    Network:WaitForChild("Arcade_RequestRebirth"):InvokeServer(50)
+    game:GetService("RunService").Heartbeat:Wait() -- very minimal delay
 end
