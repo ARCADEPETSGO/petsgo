@@ -11,4 +11,9 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer(unpack(args))
+local args = {
+    [1] = 50
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Arcade_RequestRebirth"):InvokeServer(unpack(args))
 end
