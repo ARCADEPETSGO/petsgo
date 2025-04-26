@@ -16,4 +16,4 @@ game:GetService("RunService").Heartbeat:Connect(function()
 
     -- Rebirth last
     Network:WaitForChild("Arcade_RequestRebirth"):InvokeServer(50)
-end)
+end
