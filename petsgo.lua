@@ -16,7 +16,6 @@ task.spawn(function()
     while true do
         -- Fire and Invoke normally
         Instancing_FireCustomFromClient:FireServer("ArcadeInstance", "Arcade_OnClick")
-        Instancing_InvokeCustomFromClient:InvokeServer("ArcadeInstance", "Arcade_Hatch")
         Arcade_RequestRebirth:InvokeServer(1000)
 
         task.wait(0.5) -- Wait half a second to prevent server overload
