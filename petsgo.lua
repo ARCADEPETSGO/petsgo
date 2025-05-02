@@ -18,6 +18,6 @@ task.spawn(function()
         Instancing_FireCustomFromClient:FireServer("ArcadeInstance", "Arcade_OnClick")
         Arcade_RequestRebirth:InvokeServer(1000)
 
-        task.wait(0.5) -- Wait half a second to prevent server overload
+        task.wait(0.01) -- Wait half a second to prevent server overload
     end
 end)
